@@ -1,5 +1,7 @@
 # NOTER Application
 
+> ⚠️  UNOFFICIAL COPY of [supernoter/noter](https://github.com/supernoter/noter)
+
 This is the source code for the Electron.js application NOTER, a markdown
 note-taking application. User documentation can be found at
 [supernoter.xyz](http://web.archive.org/web/20250714111623/https://supernoter.xyz/).
