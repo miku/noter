@@ -9,6 +9,13 @@ const createConfigurationInterface = require('./ConfigurationInterface')
 // https://github.com/electron/electron/issues/46538#issuecomment-2808806722
 app.commandLine.appendSwitch('gtk-version', '3');
 
+// Newer Electron/Chromium on Linux flickers when repainting on every keystroke
+// (the status bar nearly vanishes under key-repeat) because of a GPU
+// compositor regression. Disabling hardware acceleration stops the flicker;
+// this is a markdown editor, so the rendering cost is negligible. Verified with
+// `npm start -- --disable-gpu`.
+app.disableHardwareAcceleration();
+
 // Parse command line arguments
 const argv = process.argv.slice(1) // Remove the first element (path to electron executable)
 // showIntro is a boolean flag; if set, no intro text animation is shown
